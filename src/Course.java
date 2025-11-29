@@ -1,20 +1,30 @@
 public class Course {
-    private int id;
-    private String name;
-    private int number;
+    private String id;
+    private Subject subject;
+    private Teacher teacher;
+    private Group group;
 
-    public Course(int id, String name, int number) {
+    public Course(String id, Subject subject, Teacher teacher, Group group) {
         this.id = id;
-        this.name = name;
-        this.number = number;
+        this.subject = subject;
+        this.teacher = teacher;
+        this.group = group;
+        group.addCourse(this);
     }
 
-    public int getId() { return id; }
-    public String getName() { return name; }
-    public int getNumber() { return number; }
+    public String getId() {
+        return id;
+    }
 
-    @Override
-    public String toString() {
-            return String.format("Course{id=%d, name='%s', number=%d}", id, name, number);
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public Group getGroup() {
+        return group;
     }
 }

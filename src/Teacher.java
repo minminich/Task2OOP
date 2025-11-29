@@ -1,24 +1,19 @@
 public class Teacher {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String className;
+    private String id;
+    private String name;
 
-    public Teacher(int id, String firstName, String lastName, String className) {
+    public Teacher(String id, String name) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.className = className;
+        this.name = name;
     }
 
-    public int getId() { return id; }
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-
-    @Override
-    public String toString() {
-        return String.format("Teacher{id=%d, name='%s %s', department='%s'}",
-                id, firstName, lastName, className);
+    public String getId() {
+        return id;
     }
+
+    public String getName() {
+        return name;
+    }
+
 }
 

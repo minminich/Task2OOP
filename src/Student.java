@@ -1,25 +1,27 @@
 public class Student {
-    public int id;
-    private String firstName;
-    private String lastName;
+    private String id;
+    private String name;
     private Group group;
 
-    public Student(int id, String firstName, String lastName) {
+    public Student(String id, String name) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
     }
 
-    public int getId() { return id; }
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public Group getGroup() { return group; }
-    public void setGroup(Group group) { this.group = group; }
+    public String getId() {
+        return id;
+    }
 
-    @Override
-    public String toString() {
-        return String.format("Student{id=%d, name='%s %s', group=%s}",
-                id, firstName, lastName, group != null ? group.getName() : "No group");
+    public String getName() {
+        return name;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }
 

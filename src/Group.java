@@ -2,34 +2,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
+    private String id;
     private String name;
-    private int courseNumber;
-    private List<Student> students;
+    private List<Student> students = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
-    public Group(String name, int courseNumber) {
+    public Group(String id, String name) {
+        this.id = id;
         this.name = name;
-        this.courseNumber = courseNumber;
-        this.students = new ArrayList<>();
     }
 
-    public String getName() { return name; }
-    public int getCourseNumber() { return courseNumber; }
-    public List<Student> getStudents() { return students; }
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void addStudent(Student student) {
         students.add(student);
         student.setGroup(this);
     }
 
-    public void removeStudent(Student student) {
-        students.remove(student);
-        student.setGroup(null);
+    public List<Student> getStudents() {
+        return students;
     }
 
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
 
-    @Override
-    public String toString() {
-        return String.format("Group{name='%s', course=%d, students=%d}",
-                name, courseNumber, students.size());
+    public List<Course> getCourses() {
+        return courses;
     }
 }
